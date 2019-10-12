@@ -1,7 +1,27 @@
 <template>
-    <v-app dark>
+    <v-app dark="dark">
+        <v-navigation-drawer v-model="drawer" fixed="fixed" app="app">
+            <v-toolbar flat="flat" color="transparent">
+                <v-toolbar-title>
+                    Account
+                </v-toolbar-title>
+            </v-toolbar>
+            <v-divider></v-divider>
+            <v-list>
+                <v-list-tile v-for="item in items" :key="item.title" :to="item.to">
+                    <v-list-tile-avatar>
+                        <v-icon>{{item.icon}}</v-icon>
+                    </v-list-tile-avatar>
+                    <v-list-tile-content>
+                        <v-list-tile-title>{{item.title}}</v-list-tile-title>
+                    </v-list-tile-content>
+                    <!-- <v-list-tile-action> <v-btn icon ripple> <v-icon color="grey
+                    lighten-1">mdi-alert-circle</v-icon> </v-btn> </v-list-tile-action> -->
+                </v-list-tile>
+            </v-list>
+        </v-navigation-drawer>
         <v-toolbar>
-            <v-toolbar-side-icon></v-toolbar-side-icon>
+            <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>Title</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
@@ -22,15 +42,33 @@
         </v-content>
     </v-app>
 </template>
-
 <script>
-
 export default {
   name: 'App',
   data () {
     return {
-      //
+      drawer: false,
+      items: [
+        {
+          icon: 'mdi-cat',
+          title: 'Home',
+          to: '/'
+        },
+        {
+          icon: 'mdi-donkey',
+          title: 'About',
+          to: '/about'
+        },
+        {
+          icon: 'mdi-elephant',
+          title: 'About2',
+          to: 'about2'
+        }
+      ]
     }
+  },
+  methods: {
+
   }
 }
 </script>

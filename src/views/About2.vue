@@ -1,6 +1,6 @@
 <template>
     <div>
-      about
+      about2
     </div>
 </template>
 <script>
