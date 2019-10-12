@@ -23,6 +23,14 @@ export default new Router({
       component: () => import('./views/About2.vue')
     },
     {
+      path: '/photos/card',
+      component: () => import('./views/photos/card.vue')
+    },
+    {
+      path: '/photos/layout',
+      component: () => import('./views/photos/layout.vue')
+    },
+    {
       path: '/*',
       component: () => import('./views/e404.vue')
     }

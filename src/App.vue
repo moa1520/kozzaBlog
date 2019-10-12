@@ -1,5 +1,5 @@
 <template>
-    <v-app dark="dark">
+    <v-app dark>
         <v-navigation-drawer v-model="drawer" fixed app>
             <v-toolbar flat color="transparent">
                 <v-toolbar-title>
@@ -37,7 +37,7 @@
               </v-list-group>
             </v-list>
         </v-navigation-drawer>
-        <v-toolbar>
+        <v-toolbar app>
             <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>KOZZA<span class="font-weight-thin">'S BLOG</span></v-toolbar-title>
             <v-spacer></v-spacer>
