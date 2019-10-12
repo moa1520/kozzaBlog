@@ -31,6 +31,10 @@ export default new Router({
       component: () => import('./views/photos/layout.vue')
     },
     {
+      path: '/photos/notes',
+      component: () => import('./views/photos/notes.vue')
+    },
+    {
       path: '/*',
       component: () => import('./views/e404.vue')
     }
