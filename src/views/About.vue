@@ -1,16 +1,38 @@
 <template>
-  <div class="about">
-    <v-alert type="primary" :value="true" v-for="i in array">
-      반복중 {{ i }}
-    </v-alert>
-  </div>
+    <v-list>
+        <v-list-tile v-for="item in items" :key="item.title">
+            <v-list-tile-avatar>
+                <v-icon>{{item.icon}}</v-icon>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+                <v-list-tile-title>{{item.title}}</v-list-tile-title>
+            </v-list-tile-content>
+            <!-- <v-list-tile-action>
+                <v-btn icon ripple>
+                    <v-icon color="grey lighten-1">mdi-alert-circle</v-icon>
+                </v-btn>
+            </v-list-tile-action> -->
+        </v-list-tile>
+    </v-list>
 </template>
-
 <script>
 export default {
   data () {
     return {
-      array: [1, 2, 3, 4, 'www', 'xxx']
+      items: [
+        {
+          icon: 'mdi-cat',
+          title: 'Home'
+        },
+        {
+          icon: 'mdi-donkey',
+          title: 'About'
+        },
+        {
+          icon: 'mdi-elephant',
+          title: 'About2'
+        }
+      ]
     }
   }
 }

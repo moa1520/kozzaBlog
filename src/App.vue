@@ -1,16 +1,26 @@
 <template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Kozza</span>
-        <span class="font-weight-light">'s blog</span>
-      </v-toolbar-title>
-    </v-toolbar>
+    <v-app dark>
+        <v-toolbar>
+            <v-toolbar-side-icon></v-toolbar-side-icon>
+            <v-toolbar-title>Title</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+                <v-btn icon="icon">
+                    <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+                <v-btn icon="icon">
+                    <v-icon>mdi-heart</v-icon>
+                </v-btn>
+                <v-btn icon="icon">
+                    <v-icon>mdi-dots-vertical</v-icon>
+                </v-btn>
+            </v-toolbar-items>
+        </v-toolbar>
 
-    <v-content>
-      <router-view/>
-    </v-content>
-  </v-app>
+        <v-content>
+            <router-view/>
+        </v-content>
+    </v-app>
 </template>
 
 <script>
