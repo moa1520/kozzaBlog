@@ -1,9 +1,6 @@
 <template>
   <v-container fluid grid-list-md>
-      <v-layout>
-          <!-- <v-flex xs12>
-              {{ pagination }}
-          </v-flex> -->
+      <v-layout row>
           <v-flex xs5>
               <v-text-field
                   v-model="title"
@@ -16,7 +13,7 @@
                   label="content"
               ></v-text-field>
           </v-flex>
-          <v-flex xs2>
+          <v-flex>
               <v-btn color="success" @click="post">post</v-btn>
           </v-flex>
       </v-layout>

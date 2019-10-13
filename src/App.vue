@@ -92,6 +92,10 @@ export default {
             {
               title: 'layout',
               to: '/photos/layout'
+            },
+            {
+              title: 'notes',
+              to: '/photos/notes'
             }
           ]
         }
