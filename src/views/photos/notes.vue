@@ -40,7 +40,8 @@
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn @click="put(props.item)">put</v-btn>
+                <v-btn @click="put(props.item.id)">put</v-btn>
+                <v-btn @click="del(props.item.id)">del</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -50,6 +51,7 @@
 </template>
 
 <script>
+
 export default {
   data: () => ({
     rowsPerPageItems: [4, 8, 12],
@@ -61,27 +63,47 @@ export default {
     content: ''
   }),
   mounted () {
+    this.get()
   },
   methods: {
-    post () {
+    async post () {
       if (this.title !== '' && this.content !== '') {
-        this.items.push({
+        const r = await this.$firebase.firestore().collection('notes').add({
           title: this.title,
           content: this.content
         })
-        this.title = ''
-        this.content = ''
+        await this.get()
+        console.log(r)
       }
+      this.title = ''
+      this.content = ''
     },
-    get () {
-
+    async get () {
+      const snapshot = await this.$firebase.firestore().collection('notes').get()
+      this.items = []
+      snapshot.forEach(v => {
+        const { title, content } = v.data()
+        this.items.push({
+          title, content, id: v.id
+        })
+      })
     },
-    put () {
-
+    async put (id) {
+      const snapshot = await this.$firebase.firestore().collection('notes').doc(id).set({
+        title: this.title,
+        content: this.content
+      })
+      await this.get()
+      console.log(snapshot)
+      this.title = ''
+      this.content = ''
     },
-    del () {
-
+    async del (id) {
+      const snapshot = await this.$firebase.firestore().collection('notes').doc(id).delete()
+      await this.get()
+      console.log(snapshot)
     }
   }
 }
+
 </script>
