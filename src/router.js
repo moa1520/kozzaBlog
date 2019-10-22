@@ -40,6 +40,10 @@ export default new Router({
       component: () => import('./views/photos/notes.vue')
     },
     {
+      path: '/photos/axios',
+      component: () => import('./views/photos/axios.vue')
+    },
+    {
       path: '/*',
       component: () => import('./views/e404.vue')
     }
