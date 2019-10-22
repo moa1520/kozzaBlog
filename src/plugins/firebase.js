@@ -3,7 +3,7 @@ import * as firebase from 'firebase/app'
 import firebaseConfig from '../../firebaseConfig'
 
 // Add the Firebase services that you want to use
-// import 'firebase/auth'
+import 'firebase/auth'
 import 'firebase/firestore'
 
 // TODO: Replace the following with your app's Firebase project configuration
