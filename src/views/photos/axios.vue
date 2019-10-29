@@ -63,11 +63,11 @@ export default {
     }
   },
   methods: {
-    create () {
-      this.$axios
-        .post('http://localhost:5000/kozzablog/us-central1/test')
-        .then(r => (this.textCreate = r.data))
-        .catch(e => console.error(e.message))
+    async create () {
+      // this.$toasted.show('hello billo')
+      this.$toasted.global.error('에러가 발생했습니다!')
+      const r = await this.$axios.post('http://localhost:5000/kozzablog/us-central1/test/wer')
+      this.textCreate = r.data
     },
     read () {
       this.$axios
