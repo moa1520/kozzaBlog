@@ -66,24 +66,24 @@ export default {
     async create () {
       // this.$toasted.show('hello billo')
       this.$toasted.global.error('에러가 발생했습니다!')
-      const r = await this.$axios.post('http://localhost:5000/kozzablog/us-central1/test/wer')
+      const r = await this.$axios.post('test')
       this.textCreate = r.data
     },
     read () {
       this.$axios
-        .get('http://localhost:5000/kozzablog/us-central1/test/aaa')
+        .get('test/aaa')
         .then(r => (this.textRead = r.data))
         .catch(e => console.error(e.message))
     },
     update () {
       this.$axios
-        .put('http://localhost:5000/kozzablog/us-central1/test/12345')
+        .put('test/12345')
         .then(r => (this.textUpdate = r.data))
         .catch(e => console.error(e.message))
     },
     del () {
       this.$axios
-        .delete('http://localhost:5000/kozzablog/us-central1/test/444555')
+        .delete('test/444555')
         .then(r => (this.textDelete = r.data))
         .catch(e => console.error(e.message))
     }
