@@ -48,6 +48,10 @@ export default new Router({
       component: () => import('./views/photos/mother')
     },
     {
+      path: '/photos/vuex',
+      component: () => import('./views/photos/vuex')
+    },
+    {
       path: '/*',
       component: () => import('./views/e404.vue')
     }

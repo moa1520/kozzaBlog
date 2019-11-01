@@ -33,6 +33,7 @@ export default {
   methods: {
     listen () {
       this.call = true
+      this.$global = 'Changed.'
     }
   }
 }

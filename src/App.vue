@@ -39,7 +39,7 @@
         </v-navigation-drawer>
         <v-toolbar app>
             <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title>KOZZA<span class="font-weight-thin">'S BLOG</span></v-toolbar-title>
+            <v-toolbar-title>{{ $store.state.title }}KOZZA<span class="font-weight-thin">'S BLOG</span></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
                 <v-btn icon="icon">
